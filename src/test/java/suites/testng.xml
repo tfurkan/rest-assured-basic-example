@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utilities.listeners.Listener"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="Pet Api Test">
+        <classes>
+            <class name="test.DeletePetPetId">
+                <methods>
+                    <include name="deletePet"/>
+                    <include name="deleteNotFoundPetTest"/>
+                </methods>
+            </class>
+            <class name="test.GetPetFindByStatusTest">
+                <methods>
+                    <include name="getPetByStatus"/>
+                </methods>
+            </class>
+            <class name="test.GetPetPetIdTest">
+                <methods>
+                    <include name="getPetById"/>
+                    <include name="getNotFoundPetTest"/>
+                </methods>
+            </class>
+            <class name="test.PostPetPetIdTest">
+                <methods>
+                    <include name="successUpdatePost"/>
+                    <include name="notFoundUpdate"/>
+                </methods>
+            </class>
+            <class name="test.PostPetTest">
+                <methods>
+                    <include name="createMinDataPet"/>
+                    <include name="createFullDataPet"/>
+                    <include name="postIncorrectJson"/>
+                </methods>
+            </class>
+            <class name="test.PutPetTest">
+                <methods>
+                    <include name="updateFullDataPet"/>
+                    <include name="putNewPet"/>
+                    <include name="putIncorrectJson"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
